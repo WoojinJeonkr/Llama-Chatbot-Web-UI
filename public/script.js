@@ -118,6 +118,30 @@ document.addEventListener('DOMContentLoaded', () => {
         return indicator;
     }
 
+    // 인사말 감지 함수
+    function isGreeting(message) {
+        const greetings = [
+            '안녕', '안녕하세요', '안냥', '하이', 'hi', 'hello',
+            '반가워', '반갑습니다', '안녕하십니까', '안녕하신가',
+            '안녕하셨습니까', '안녕하셨나요', '안녕하셨죠',
+            '안녕하신가요', '안녕하신지', '안녕하신지요',
+            '안녕하신가 봅니다', '안녕하신가 보네요',
+            '안녕하신가 봐요', '안녕하신가 봅니다',
+            '안녕하신가 보네', '안녕하신가 봐',
+            '안녕하신가 봅니다', '안녕하신가 보네요',
+            '안녕하신가 봐요', '안녕하신가 봅니다',
+            '안녕하신가 보네', '안녕하신가 봐'
+        ];
+
+        // 입력 메시지를 소문자로 변환하고 공백 제거
+        const normalizedMessage = message.toLowerCase().trim();
+        
+        // 인사말 목록과 일치하는지 확인
+        return greetings.some(greeting => 
+            normalizedMessage.includes(greeting.toLowerCase())
+        );
+    }
+
     async function sendMessage() {
         const message = userInput.value.trim();
         if (!message) return;
@@ -130,6 +154,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         addMessage(message, true);
         userInput.value = '';
+
+        // 인사말인 경우 바로 응답
+        if (isGreeting(message)) {
+            addMessage('안녕하세요. 어떤 점이 궁금하신가요?');
+            return;
+        }
 
         const typingIndicator = showTypingIndicator();
 
