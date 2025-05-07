@@ -1,0 +1,14 @@
+{
+  "name": "llama-chatbot-web-ui",
+  "version": "1.0.0",
+  "description": "Llama Chatbot Web Interface",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "axios": "^1.6.2"
+  }
+} 
