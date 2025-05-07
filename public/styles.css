@@ -112,4 +112,60 @@ body {
 @keyframes typing {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
+}
+
+.server-url-container {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    padding: 0 20px;
+}
+
+#server-url {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#save-url {
+    padding: 8px 16px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#save-url:hover {
+    background-color: #27ae60;
+}
+
+.url-status {
+    color: #fff;
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.url-status.success {
+    color: #2ecc71;
+}
+
+.url-status.error {
+    color: #e74c3c;
+}
+
+#server-url:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+#save-url {
+    min-width: 60px;
 } 

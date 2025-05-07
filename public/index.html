@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>지식재산권 판결문 AI 챗봇</title>
+    <title>AI 챗봇</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="chat-container">
         <div class="chat-header">
-            <h1>지식재산권 판결문 AI 챗봇</h1>
+            <h1>AI 챗봇</h1>
+            <div class="server-url-container">
+                <input type="text" id="server-url" placeholder="서버 URL을 입력하세요 (예: http://your-ngrok-url)">
+                <button id="save-url">저장</button>
+            </div>
         </div>
         <div class="chat-messages" id="chat-messages">
             <div class="message bot">
